@@ -27,6 +27,21 @@ button.addButton:hover {
   color: #0070f3;
 }
 
+button.resetButton {
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #dc143c;
+  color: white;
+  border: 1px solid #dc143c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.resetButton:hover {
+  background-color: #fff;
+  color: #dc143c;
+}
+
 .todoItem {
   display: flex;
   align-items: center;

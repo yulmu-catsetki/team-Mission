@@ -78,6 +78,10 @@ const TodoList = () => {
     setTodos(newTodos);
   };
 
+  const reset = () => {
+    setTodos([]);
+  };
+
   // 컴포넌트를 렌더링합니다.
   return (
     <div className={styles.container}>
@@ -92,6 +96,10 @@ const TodoList = () => {
       {/* 할 일을 추가하는 버튼입니다. */}
       <button className={styles.addButton} onClick={addTodo}>
         Add Todo
+      </button>
+      {/* 할 일 목록을 초기화하는 버튼입니다. */}
+      <button className={styles.resetButton} onClick={reset}>
+        Reset
       </button>
       {/* 할 일 목록을 렌더링합니다. */}
       <ul>
