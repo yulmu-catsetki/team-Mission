@@ -10,11 +10,21 @@ import styles from "@/styles/TodoList.module.css";
 // TodoItem 컴포넌트를 정의합니다.
 const TodoItem = ({ todo, onToggle, onDelete, onUpper, onLower }) => {
   // 각 할 일 항목을 렌더링합니다.
+  const handleToggle = () => {
+    // 완료 상태를 업데이트합니다.
+    onToggle();
+
+    // 체크박스가 체크되어 있을 때 "VERY GOOOOD"을 출력합니다.
+    if (!todo.completed) {
+      console.log("VERY GOOOOD");
+    }
+  };
+
   return (
     <li className={styles.todoItem}>
       {/* 체크박스를 렌더링하고, 체크박스의 상태를 할 일의 완료 상태와 동기화합니다.
-          체크박스의 상태가 변경되면 onToggle 함수를 호출하여 완료 상태를 업데이트합니다. */}
-      <input type="checkbox" checked={todo.completed} onChange={onToggle} />
+          체크박스의 상태가 변경되면 handleToggle 함수를 호출하여 완료 상태를 업데이트합니다. */}
+      <input type="checkbox" checked={todo.completed} onChange={handleToggle} />
 
       {/* 할 일의 텍스트를 렌더링하고, 완료 상태에 따라 텍스트에 취소선을 적용합니다. */}
       <span
